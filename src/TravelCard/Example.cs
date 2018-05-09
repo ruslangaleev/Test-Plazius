@@ -42,8 +42,10 @@ namespace TravelCard
                 var lastCard = newCards.LastOrDefault();
 
                 var card = cards.FirstOrDefault(t => lastCard.To == t.From);
-
-                newCards.Add(card);
+                if (card != null)
+                {
+                    newCards.Add(card);
+                }
             }
 
             return newCards.ToArray();
