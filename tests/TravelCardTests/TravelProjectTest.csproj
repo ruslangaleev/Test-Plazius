@@ -11,7 +11,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\src\TravelCard\TravelCard.csproj" />
+    <ProjectReference Include="..\..\src\TravelCard\TravelProject.csproj" />
   </ItemGroup>
 
 </Project>

@@ -1,16 +1,16 @@
 ﻿using NUnit.Framework;
 using System;
-using System.Collections.Generic;
-using System.Text;
+using TravelProject;
 
-namespace TravelCard
+namespace TravelProjectTest
 {
     [TestFixture]
-    public class TravelCardTests
+    public class TravelTests
     {
         [Test(Description = "Вернет список упорядоченных карточек")]
         public void ReturnsValidSortedLit()
         {
+            // INIT
             var sourceCards = new TravelCard[]
             {
                 new TravelCard
@@ -49,9 +49,12 @@ namespace TravelCard
                 }
             };
 
-            var example = new Example();
-            var actualCards = example.Sort(sourceCards);
+            var travel = new Travel();
 
+            // ACT
+            var actualCards = travel.Sort(sourceCards);
+
+            // ASSERT
             Assert.Multiple(() =>
             {
                 for(int i = 0; i < expectedCards.Length; i++)
@@ -65,6 +68,7 @@ namespace TravelCard
         [Test(Description = "Вернет исключение, т.к. одна из карточек содержит в себе несуществующий пункт отправления или пункт назначения")]
         public void ThrowsException_If_CardInvalid()
         {
+            // INIT
             var sourceCards = new TravelCard[]
 {
                 new TravelCard
@@ -89,9 +93,10 @@ namespace TravelCard
                 }
             };
 
-            var example = new Example();
+            var travel = new Travel();
 
-            Assert.Throws<Exception>(() => example.Sort(sourceCards));
+            // ACT / ASSERT
+            Assert.Throws<Exception>(() => travel.Sort(sourceCards));
         }
     }
 }

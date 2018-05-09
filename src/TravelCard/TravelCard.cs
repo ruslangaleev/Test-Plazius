@@ -1,4 +1,4 @@
-﻿namespace TravelCard
+﻿namespace TravelProject
 {
     /// <summary>
     /// Карточка путешествия

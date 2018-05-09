@@ -1,20 +1,29 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
+using System;
 
-namespace TravelCard
+namespace TravelProject
 {
-    public interface IExample
+    public class Travel
     {
-        TravelCard[] Sort(TravelCard[] cards);
-    }
-
-    public class Example : IExample
-    {
+        /// <summary>
+        /// Сортировка карточек для путешествия
+        /// </summary>
         public TravelCard[] Sort(TravelCard[] cards)
         {
+            if (cards == null)
+            {
+                throw new ArgumentNullException(nameof(cards));
+            }
+
+            if (cards.Length == 0)
+            {
+                return cards;
+            }
+
             var newCards = new List<TravelCard>();
 
-            // Ищем точку отправления, на которую не ссылает другая карточка
+            // 1.1 Ищем точку отправления, на которую не ссылает другая карточка
             foreach (var entry in cards)
             {
                 var card = cards.FirstOrDefault(t => entry.From == t.To);
@@ -24,19 +33,20 @@ namespace TravelCard
                     var any = cards.FirstOrDefault(t => entry.To == t.From);
                     if (any == null)
                     {
-                        throw new System.Exception($"Карточка '{entry.From} - {entry.To}' не имеет существующую точку отправки и точку назначения");
+                        throw new Exception($"Карточка '{entry.From} - {entry.To}' не имеет существующую точку отправки и точку назначения");
                     }
 
                     newCards.Add(entry);
-                    //break;
                 }
             }
 
+            // 1.2 Если в карточках замкнутый путь, то берем самый первый
             if (newCards.Count == 0)
             {
                 newCards.Add(cards.FirstOrDefault());
             }
 
+            // 2. Ищем пути и добавляем в список
             for(int i = 0; i < cards.Length; i++)
             {
                 var lastCard = newCards.LastOrDefault();
