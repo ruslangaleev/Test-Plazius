@@ -39,13 +39,13 @@ namespace TravelCard
                 },
                 new TravelCard
                 {
-                    From = "Москва",
-                    To = "Париж"
+                    From = "Кельн",
+                    To = "Москва"
                 },
                 new TravelCard
                 {
-                    From = "Кельн",
-                    To = "Москва"
+                    From = "Москва",
+                    To = "Париж"
                 }
             };
 
