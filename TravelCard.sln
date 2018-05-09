@@ -7,9 +7,9 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{0175C8F1-BC5
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{3D451C53-5300-4BDC-B43D-B44F9259013B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TravelCard", "src\TravelCard\TravelCard.csproj", "{8E8C937B-F03E-4E8C-9656-639CC2331244}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TravelCard", "src\TravelCard\TravelCard.csproj", "{8E8C937B-F03E-4E8C-9656-639CC2331244}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TravelCardTests", "tests\TravelCardTests\TravelCardTests.csproj", "{DDFCD97A-BE91-45D2-9851-6CBDB325F599}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TravelCardTest", "tests\TravelCardTests\TravelCardTest.csproj", "{DDFCD97A-BE91-45D2-9851-6CBDB325F599}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
